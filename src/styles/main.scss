@@ -1,11 +1,9 @@
-@import "./part/some-part.scss";
+@import "./mixins/_circle-element.scss";
 
 *{
 	box-sizing: border-box;
 }
 body{margin: 0;}
-
-
 
 $txt-color: #fff;
 
@@ -14,4 +12,3 @@ h1{
 	color: $txt-color;
 	border-bottom: 4px solid $txt-color;
 }
-
