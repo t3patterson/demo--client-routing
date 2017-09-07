@@ -10,12 +10,12 @@ module.exports = {
   context : `${__dirname}` ,
   module: {
     loaders: [
-		 { 
+		 {
           test: /\.js$/,
 			 exclude: /node_modules/,
 			 loader: 'babel-loader',
           query: {
-             presets: ['es2015', 'react']
+             presets: ['es2015']
           }
 		 },
 	    {
@@ -37,7 +37,7 @@ module.exports = {
 	  new CopyWebpackPlugin([
 	     {from : 'src/images', to: 'images'}
 	  ]),
-	 
+
      //env plugin -- css
   ]
 }
