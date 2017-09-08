@@ -39,12 +39,25 @@ let renderStep2 = function(txt){
 }
 
 
+let render404 = function(txt){
+  document.querySelector('#app-container')
+    .innerHTML =`
+      <h1 class="error-page">Sorry</h1>
+      <p>That page doesn't exist</p>
+      <footer>
+        <a href="/">&#10224;</a>
+      </footer>
+    `
+}
+
 const routes = {
   '/step-1' : renderStep1,
   '/step-2' : renderStep2,
-  '/' : renderHomeTemplate
+  '/' : renderHomeTemplate,
+  '/*' : render404
 }
 
+/*Routing */
 let routerInstance = Router(routes)
 routerInstance.setRoute(routerInstance.getRoute())
 routerInstance.init('/')
