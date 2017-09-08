@@ -1,7 +1,8 @@
 import {Router} from 'director/build/director'
 
-let renderHomeTemplate = function(txt){
 
+
+let renderHomeTemplate = function(txt){
   document.querySelector('#app-container')
     .innerHTML = `
       <h1>How to draw an owl</h1>
@@ -38,18 +39,12 @@ let renderStep2 = function(txt){
 }
 
 
-let appContainer = document.querySelector('#app-container')
-
-appContainer.innerHTML = renderHomeTemplate()
-
-console.log(Router)
-
 const routes = {
   '/step-1' : renderStep1,
   '/step-2' : renderStep2,
-  '' : renderHomeTemplate
+  '/' : renderHomeTemplate
 }
 
 let routerInstance = Router(routes)
-routerInstance.init()
 routerInstance.setRoute(routerInstance.getRoute())
+routerInstance.init('/')
